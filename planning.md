@@ -1,3 +1,6 @@
 ## Plan Nuevo Blog
 
-Add disqus and supersearch
+fix routing blog/testCustom////???
+Style home page
+Style posts
+
