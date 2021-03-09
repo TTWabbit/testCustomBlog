@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/super-search.css">
   </head>
   <body>
     <nav>
@@ -11,11 +12,16 @@
       <a href="/blog/">Blog</a>
     </nav>
     <h1>{{ page.title }}</h1>
+    <div class="search" id="js-search">
+      <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
+      <ul class="search__results" id="js-search__results"></ul>
+    </div>
     <section>
       {{ content }}
     </section>
     <footer>
       &copy; to me
     </footer>
+    <script src="/assets/js/super-search.js"></script>
   </body>
 </html>
