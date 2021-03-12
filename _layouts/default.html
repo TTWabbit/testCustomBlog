@@ -5,17 +5,37 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/assets/css/super-search.css">
+    <script src="https://kit.fontawesome.com/05219337a2.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-    <h1>{{ page.title }}</h1>
-    <div class="search" id="js-search">
-      <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
-      <ul class="search__results" id="js-search__results"></ul>
-    </div>
+    <div class="container">
+      <div class="col-sm-3">
+        <div class="fixed-condition">
+          <h1 class="author-name"><a href="/">{{ site.author }}</a></h1>
+          {% if site.about %}
+            <div class="profile-about">
+              {{ site.about }}
+            </div>
+          {% endif %}
+          <div class="social">
+            <ul>
+              {% for link in site.social %}
+                <li><a href="{{ link.link }}" target="_blank"><i class="fab {{ link.icon }}"></i></a></li>
+              {% endfor %}
+              <li><a href="mailto:toni.teleco@gmail.com"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+          </div>
+          <div class="search" id="js-search">
+            <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
+            <ul class="search__results" id="js-search__results"></ul>
+          </div>
+          <ul class="sidebar-nav">
+            <strong>Navigation</strong>
+            {% for i in site.urls %}
+              <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
     <section>
       {{ content }}
     </section>
